@@ -97,7 +97,7 @@ function displayList(items, containerId) {
 
 function showDetails(item) {
   currentItem = item;
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = 'auto';
   document.getElementById('modal-title').textContent = item.title || item.name;
   document.getElementById('modal-description').textContent = item.overview;
   document.getElementById('modal-image').src = `${IMG_URL}${item.poster_path}`;
