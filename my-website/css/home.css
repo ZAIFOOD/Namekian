@@ -36,8 +36,10 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
+
 
 .nav-links a {
   color: #ccc;
@@ -50,6 +52,21 @@ a {
   background-color: #333;
   color: #00bcd4;
 }
+
+/* Make nav-links wrap on small screens */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Style nav buttons */
+.nav-links a {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
 
 .search-bar {
   padding: 8px 12px;
@@ -458,3 +475,101 @@ a {
   background-color: #e0e0e0;
 }
 
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Show hamburger and hide nav links on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #111; /* Optional: dark background */
+    position: absolute;
+    top: 60px; /* below navbar */
+    left: 0;
+    padding: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a, .nav-links .search-bar {
+    padding: 10px 20px;
+  }
+}
+
+/* Navbar default layout */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+}
+
+/* Search bar stays in middle */
+.search-bar {
+  flex: 1;
+  max-width: 300px;
+  margin: 0 15px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+}
+
+/* Nav links default */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Mobile responsive tweaks */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .search-bar {
+    order: 2;
+    flex: 1;
+    margin: 10px 0;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .hamburger {
+    order: 3;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 20px;
+  }
+}
