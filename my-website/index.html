@@ -18,12 +18,22 @@
 
 <body>
   <div class="navbar">
-    <img src="logo.png" alt="LOGO HERE" />
+    <img src="logo.png" alt="LOGO HERE" class="logo" />
+  
+    <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" />
+  
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" />
+      <a href="#movies-list">Movies</a>
+      <a href="#tvshows-list">TV Shows</a>
+      <a href="#anime-list">Animes</a>
     </div>
   </div>
+  
 
   <div class="banner" id="banner">
     <div class="banner-content">
